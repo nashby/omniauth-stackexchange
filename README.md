@@ -1,4 +1,4 @@
-# OmniAuth StackExchange
+# OmniAuth StackExchange [![TravisCI](https://secure.travis-ci.org/nashby/omniauth-stackexchange.png?branch=master)](http://travis-ci.org/nashby/omniauth-stackexchange) [![Gemnasium](https://gemnasium.com/nashby/omniauth-stackexchange.png)](https://gemnasium.com/nashby/omniauth-stackexchange)
 
 This gem contains the StackExchange strategy for OmniAuth.
 

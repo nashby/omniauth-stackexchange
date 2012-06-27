@@ -8,17 +8,23 @@ StackExchange uses the OAuth2 flow, you can read about it here: https://api.stac
 
 So let's say you're using Rails, you need to add the strategy to your `Gemfile`:
 
-    gem 'omniauth-stackexchange'
+```ruby
+gem 'omniauth-stackexchange'
+```
 
 You can pull them in directly from github e.g.:
 
-    gem 'omniauth-stackexchange', :git => 'https://github.com/nashby/omniauth-stackexchange.git'
+```ruby
+gem 'omniauth-stackexchange', :git => 'https://github.com/nashby/omniauth-stackexchange.git'
+```
 
 Once these are in, you need to add the following to your `config/initializers/omniauth.rb`:
 
-    Rails.application.config.middleware.use OmniAuth::Builder do
-      provider :stackexchange, "client_id", "client_secret", public_key: "key"
-    end
+```ruby
+Rails.application.config.middleware.use OmniAuth::Builder do
+  provider :stackexchange, "client_id", "client_secret", public_key: "key"
+end
+```
 
 You will obviously have to put in your client_id, client_secret and public_key, which you get when you register your app with StackExchange (they call them Client Id, Client Secret and Key).
 

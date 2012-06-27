@@ -44,4 +44,4 @@ OmniAuth StackExchange is tested under 1.9.3.
 
 ## License
 
-Copyright (c) 2011 by Vasiliy Ermolovich
+Copyright (c) 2012 by Vasiliy Ermolovich

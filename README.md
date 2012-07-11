@@ -28,6 +28,22 @@ end
 
 You will obviously have to put in your client_id, client_secret and public_key, which you get when you register your app with StackExchange (they call them Client Id, Client Secret and Key).
 
+You will also need to specify a site api key to uniquely identify the StackExchange site you wish to authenticate against.  A list of valid site api keys can be found at https://api.stackexchange.com/docs/sites.  You have two options for passing the site api key, the first by passing the key along as a query string parameter on the url you use to call into StackExchange as follows:
+
+```ruby
+/auth/stackexchange?site=stackoverflow
+```
+
+If a value is not passed via the url, the gem uses the one specified in the omniauth.rb file as follows where you will have to replace site_api_key with the value you the site you wish to authenticate against (e.g. stackoverflow or superuser):
+
+```ruby
+Rails.application.config.middleware.use OmniAuth::Builder do
+  provider :stackexchange, "client_id", "client_secret", public_key: "key", site: 'site_api_key'
+end
+```
+
+
+
 Now just follow the README at: https://github.com/intridea/omniauth
 
 ## Supported Rubies

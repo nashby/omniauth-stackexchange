@@ -22,11 +22,13 @@ Once these are in, you need to add the following to your `config/initializers/om
 
 ```ruby
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :stackexchange, "client_id", "client_secret", public_key: "key"
+  provider :stackexchange, "client_id", "client_secret", public_key: "key", site: 'stackoverflow'
 end
 ```
 
 You will obviously have to put in your client_id, client_secret and public_key, which you get when you register your app with StackExchange (they call them Client Id, Client Secret and Key).
+
+You will also need to specify a site option to uniquely identify the StackExchange site (e.g. `stackoverflow` or `superuser`) you wish to authenticate against.  A list of valid site api keys can be found at https://api.stackexchange.com/docs/sites. It's `stackoverflow` by default.
 
 Now just follow the README at: https://github.com/intridea/omniauth
 

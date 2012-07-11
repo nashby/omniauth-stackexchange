@@ -3,6 +3,8 @@ require 'omniauth-oauth2'
 module OmniAuth
   module Strategies
     class StackExchange < OmniAuth::Strategies::OAuth2
+      class NotRegisteredForStackExchangeSiteError < StandardError; end
+
       option :client_options, {
         :site => 'https://api.stackexchange.com/2.0',
         :authorize_url => 'https://stackexchange.com/oauth',
@@ -24,9 +26,8 @@ module OmniAuth
           'nickname' => raw_info['display_name'],
           'image' => raw_info['profile_image'],
           'urls' => {
-             'StackOverflow' => raw_info['link']
-           },
-
+            site => raw_info['link']
+          }
         }
       end
 
@@ -36,14 +37,24 @@ module OmniAuth
 
       def raw_info
         @raw_info ||= access_token.get('me', :params => params).parsed['items'].first
+
+        unless @raw_info
+          raise NotRegisteredForStackExchangeSiteError, "User is not registered for requested StackExchange site (#{site})"
+        end
+
+        @raw_info
       end
 
       def params
         {
-          :site => 'stackoverflow',
+          :site => site,
           :access_token => access_token.token,
           :key => options.public_key
         }
+      end
+
+      def site
+        options.site || 'stackoverflow'
       end
     end
   end

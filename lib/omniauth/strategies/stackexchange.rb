@@ -54,7 +54,7 @@ module OmniAuth
       end
 
       def site
-        options.site || 'stackoverflow'
+        request.env['omniauth.params']['site'] || options.site || 'stackoverflow'
       end
     end
   end

@@ -6,3 +6,8 @@
     ```ruby
       provider :stackexchange, "client_id", "client_secret", public_key: "key", site: 'stackoverflow'
     ```
+
+## 0.2.0 (July 16, 2012) ##
+
+### enhancements
+  * You can pass the site api key as the value for a GET parameter named sites (e.g. /auth/stackexchange?site=superuser) (by [@ginnyd](https://github.com/ginnyd))

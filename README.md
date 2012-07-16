@@ -30,6 +30,8 @@ You will obviously have to put in your client_id, client_secret and public_key, 
 
 You will also need to specify a site option to uniquely identify the StackExchange site (e.g. `stackoverflow` or `superuser`) you wish to authenticate against.  A list of valid site api keys can be found at https://api.stackexchange.com/docs/sites. It's `stackoverflow` by default.
 
+If your application needs to be able to support multiple StackExchange sites, you can pass the site api key as the value for a GET parameter named sites (e.g. /auth/stackexchange?site=superuser)
+
 Now just follow the README at: https://github.com/intridea/omniauth
 
 ## Supported Rubies

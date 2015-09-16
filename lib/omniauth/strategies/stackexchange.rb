@@ -56,6 +56,12 @@ module OmniAuth
       def site
         request.env['omniauth.params']['site'] || options.site || 'stackoverflow'
       end
+
+      def callback_phase
+        super
+      rescue NotRegisteredForStackExchangeSiteError => e
+        fail!(:user_is_not_registered, e)
+      end
     end
   end
 end

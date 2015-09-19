@@ -1,3 +1,8 @@
+## master ##
+
+### enhancements
+ * Throw omniauth exception when user is not registered on StackExchange so you can rescue it in your app (by [@yimajo](https://github.com/yimajo))
+
 ## 0.1.0 (July 11, 2012) ##
 
 ### enhancements

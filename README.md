@@ -22,7 +22,7 @@ Once these are in, you need to add the following to your `config/initializers/om
 
 ```ruby
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :stackexchange, 'client_id', 'client_secret', public_key: "key", site: 'stackoverflow'
+  provider :stackexchange, 'client_id', 'client_secret', public_key: 'key', site: 'stackoverflow'
 end
 ```
 

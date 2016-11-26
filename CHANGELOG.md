@@ -1,7 +1,7 @@
-## 0.2.1 (September 22, 2015) ##
+## Unreleased ##
 
 ## Bug fix
-* Fixes regression in omniauth-oauth2 v1.4.0 by [intridea/omniauth-oauth2@85fdbe1](https://github.com/intridea/omniauth-oauth2/commit/85fdbe1)
+* Fixes regression in omniauth-oauth2 v1.4.0 by [intridea/omniauth-oauth2@85fdbe1](https://github.com/intridea/omniauth-oauth2/commit/85fdbe1) (by [@gauravtiwari](https://github.com/gauravtiwari))
 
 ## 0.2.1 (September 22, 2015) ##
 

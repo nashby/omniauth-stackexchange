@@ -6,7 +6,7 @@ describe OmniAuth::Strategies::StackExchange do
   end
 
   it 'has correct site' do
-    stackexchange.options.client_options.site.must_equal("https://api.stackexchange.com/2.0")
+    stackexchange.options.client_options.site.must_equal('https://api.stackexchange.com/2.0')
   end
 
   it 'has correct authorize url' do
